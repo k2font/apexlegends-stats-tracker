@@ -10,5 +10,6 @@ func main() {
 	r := gin.Default()
 	r.GET("/map-rotation", m.MapRotation)
 	r.GET("/predator", m.Predator)
+	r.GET("/search-rank", m.SearchRank)
 	r.Run()
 }

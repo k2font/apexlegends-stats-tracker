@@ -16,10 +16,21 @@ const Predator = async ({
       <nav>
         <h1>Predator Border</h1>
         
-        <p>PC: {predator.RP.PC.totalMastersAndPreds}</p>
-        <p>PS4/PS5: {predator.RP.PS4.totalMastersAndPreds}</p>
-        <p>XBox: {predator.RP.X1.totalMastersAndPreds}</p>
-        <p>Switch: {predator.RP.SWITCH.totalMastersAndPreds}</p>
+        <h2>PC</h2>
+        <p>border: {predator.RP.PC.val}</p>
+        <p>P / (M + P): {(750 / predator.RP.PC.totalMastersAndPreds) * 100} %</p>
+
+        <h2>PS4</h2>
+        <p>border: {predator.RP.PS4.val}</p>
+        <p>P / (M + P): {(750 / predator.RP.PS4.totalMastersAndPreds) * 100} %</p>
+
+        <h2>XBox</h2>
+        <p>border: {predator.RP.X1.val}</p>
+        <p>P / (M + P): {(750 / predator.RP.X1.totalMastersAndPreds) * 100} %</p>
+
+        <h2>Switch</h2>
+        <p>border: {predator.RP.SWITCH.val}</p>
+        <p>P / (M + P): {(750 / predator.RP.SWITCH.totalMastersAndPreds) * 100} %</p>
       </nav>
       {children}
     </section>

@@ -3,9 +3,12 @@ package main
 import (
 	"encoding/json"
 	"io"
+	"log"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 const (
@@ -40,8 +43,15 @@ type MapRotation struct {
 }
 
 func mapRotation(c *gin.Context) {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	API_KEY := os.Getenv("API_KEY")
+
 	req, _ := http.NewRequest("GET", MAP_ROTATION_URL, nil)
-	req.Header.Set("Authorization", "ff9fd10daf2611e4a4fec89efb26d368")
+	req.Header.Set("Authorization", API_KEY)
 	client := &http.Client{}
 	resp, _ := client.Do(req)
 	defer resp.Body.Close()

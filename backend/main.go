@@ -9,5 +9,6 @@ import (
 func main() {
 	r := gin.Default()
 	r.GET("/map-rotation", m.MapRotation)
+	r.GET("/predator", m.Predator)
 	r.Run()
 }

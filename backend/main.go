@@ -43,19 +43,25 @@ type MapRotation struct {
 }
 
 func mapRotation(c *gin.Context) {
+	// .envから環境変数を読み込み
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
-
 	API_KEY := os.Getenv("API_KEY")
 
+	// API実行 + データフェッチ
 	req, _ := http.NewRequest("GET", MAP_ROTATION_URL, nil)
 	req.Header.Set("Authorization", API_KEY)
 	client := &http.Client{}
-	resp, _ := client.Do(req)
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Fatal("HTTP error.")
+	}
 	defer resp.Body.Close()
 	body, _ := io.ReadAll(resp.Body)
+
+	// []byte型のJSONデータをGoの構造体に変換する
 	var mapData MapRotation
 	json.Unmarshal(body, &mapData)
 	c.IndentedJSON(http.StatusOK, mapData)

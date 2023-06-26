@@ -16,8 +16,14 @@ const MapRotation = async ({
     <section>
       <nav>
         <h1>Map Rotation</h1>
-        <MapInfo rotationInfo={map_rotation.battle_royale} title="Battile Royale" />
-        <MapInfo rotationInfo={map_rotation.ranked} title="Ranked" />        
+        <MapInfo
+          rotationInfo={map_rotation.battle_royale}
+          title="Battile Royale"
+        />
+        <MapInfo
+          rotationInfo={map_rotation.ranked}
+          title="Ranked"
+        />
       </nav>
       {children}
     </section>

@@ -22,8 +22,16 @@ const MapInfo = ({
 }) => {
   return (
     <>
-      <MapInfoPanel rotationInfo={rotationInfo.current} title={title} isCurrentMap={true} />
-      <MapInfoPanel rotationInfo={rotationInfo.next} title={title} isCurrentMap={false} />
+      <MapInfoPanel
+        rotationInfo={rotationInfo.current}
+        title={title}
+        isCurrentMap={true}
+      />
+      <MapInfoPanel
+        rotationInfo={rotationInfo.next}
+        title={title}
+        isCurrentMap={false}
+      />
     </>
   );
 }

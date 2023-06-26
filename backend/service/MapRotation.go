@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	MAP_ROTATION_URL = "https://api.mozambiquehe.re/maprotation"
+	MAP_ROTATION_URL = "https://api.mozambiquehe.re/maprotation?version=2"
 )
 
 type mapRotation struct {

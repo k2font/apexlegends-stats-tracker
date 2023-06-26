@@ -12,34 +12,149 @@ import (
 )
 
 const (
-	MAP_ROTATION_URL = "https://api.mozambiquehe.re/maprotation"
+	MAP_ROTATION_URL = "https://api.mozambiquehe.re/maprotation?version=2"
 )
 
 type mapRotation struct {
-	Current struct {
-		Start             int    `json:"start"`
-		End               int    `json:"end"`
-		ReadableDateStart string `json:"readableDate_start"`
-		ReadableDateEnd   string `json:"readableDate_end"`
-		Map               string `json:"map"`
-		Code              string `json:"code"`
-		DurationInSecs    int    `json:"DurationInSecs"`
-		DurationInMinutes int    `json:"DurationInMinutes"`
-		Asset             string `json:"asset"`
-		RemainingSecs     int    `json:"remainingSecs"`
-		RemainingMins     int    `json:"remainingMins"`
-		RemainingTimer    string `json:"remainingTimer"`
-	} `json:"current"`
-	Next struct {
-		Start             int    `json:"start"`
-		End               int    `json:"end"`
-		ReadableDateStart string `json:"readableDate_start"`
-		ReadableDateEnd   string `json:"readableDate_end"`
-		Map               string `json:"map"`
-		Code              string `json:"code"`
-		DurationInSecs    int    `json:"DurationInSecs"`
-		DurationInMinutes int    `json:"DurationInMinutes"`
-	} `json:"next"`
+	BattleRoyale struct {
+		Current struct {
+			Start             int    `json:"start"`
+			End               int    `json:"end"`
+			ReadableDateStart string `json:"readableDate_start"`
+			ReadableDateEnd   string `json:"readableDate_end"`
+			Map               string `json:"map"`
+			Code              string `json:"code"`
+			DurationInSecs    int    `json:"DurationInSecs"`
+			DurationInMinutes int    `json:"DurationInMinutes"`
+			Asset             string `json:"asset"`
+			RemainingSecs     int    `json:"remainingSecs"`
+			RemainingMins     int    `json:"remainingMins"`
+			RemainingTimer    string `json:"remainingTimer"`
+		} `json:"current"`
+		Next struct {
+			Start             int    `json:"start"`
+			End               int    `json:"end"`
+			ReadableDateStart string `json:"readableDate_start"`
+			ReadableDateEnd   string `json:"readableDate_end"`
+			Map               string `json:"map"`
+			Code              string `json:"code"`
+			DurationInSecs    int    `json:"DurationInSecs"`
+			DurationInMinutes int    `json:"DurationInMinutes"`
+			Asset             string `json:"asset"`
+		} `json:"next"`
+	} `json:"battle_royale"`
+	Arenas struct {
+		Current struct {
+			Start             int    `json:"start"`
+			End               int    `json:"end"`
+			ReadableDateStart string `json:"readableDate_start"`
+			ReadableDateEnd   string `json:"readableDate_end"`
+			Map               string `json:"map"`
+			Code              string `json:"code"`
+			DurationInSecs    int    `json:"DurationInSecs"`
+			DurationInMinutes int    `json:"DurationInMinutes"`
+			Asset             string `json:"asset"`
+			RemainingSecs     int    `json:"remainingSecs"`
+			RemainingMins     int    `json:"remainingMins"`
+			RemainingTimer    string `json:"remainingTimer"`
+		} `json:"current"`
+		Next struct {
+			Start             int    `json:"start"`
+			End               int    `json:"end"`
+			ReadableDateStart string `json:"readableDate_start"`
+			ReadableDateEnd   string `json:"readableDate_end"`
+			Map               string `json:"map"`
+			Code              string `json:"code"`
+			DurationInSecs    int    `json:"DurationInSecs"`
+			DurationInMinutes int    `json:"DurationInMinutes"`
+			Asset             string `json:"asset"`
+		} `json:"next"`
+	} `json:"arenas"`
+	Ranked struct {
+		Current struct {
+			Start             int    `json:"start"`
+			End               int    `json:"end"`
+			ReadableDateStart string `json:"readableDate_start"`
+			ReadableDateEnd   string `json:"readableDate_end"`
+			Map               string `json:"map"`
+			Code              string `json:"code"`
+			DurationInSecs    int    `json:"DurationInSecs"`
+			DurationInMinutes int    `json:"DurationInMinutes"`
+			Asset             string `json:"asset"`
+			RemainingSecs     int    `json:"remainingSecs"`
+			RemainingMins     int    `json:"remainingMins"`
+			RemainingTimer    string `json:"remainingTimer"`
+		} `json:"current"`
+		Next struct {
+			Start             int    `json:"start"`
+			End               int    `json:"end"`
+			ReadableDateStart string `json:"readableDate_start"`
+			ReadableDateEnd   string `json:"readableDate_end"`
+			Map               string `json:"map"`
+			Code              string `json:"code"`
+			DurationInSecs    int    `json:"DurationInSecs"`
+			DurationInMinutes int    `json:"DurationInMinutes"`
+			Asset             string `json:"asset"`
+		} `json:"next"`
+	} `json:"ranked"`
+	ArenasRanked struct {
+		Current struct {
+			Start             int    `json:"start"`
+			End               int    `json:"end"`
+			ReadableDateStart string `json:"readableDate_start"`
+			ReadableDateEnd   string `json:"readableDate_end"`
+			Map               string `json:"map"`
+			Code              string `json:"code"`
+			DurationInSecs    int    `json:"DurationInSecs"`
+			DurationInMinutes int    `json:"DurationInMinutes"`
+			Asset             string `json:"asset"`
+			RemainingSecs     int    `json:"remainingSecs"`
+			RemainingMins     int    `json:"remainingMins"`
+			RemainingTimer    string `json:"remainingTimer"`
+		} `json:"current"`
+		Next struct {
+			Start             int    `json:"start"`
+			End               int    `json:"end"`
+			ReadableDateStart string `json:"readableDate_start"`
+			ReadableDateEnd   string `json:"readableDate_end"`
+			Map               string `json:"map"`
+			Code              string `json:"code"`
+			DurationInSecs    int    `json:"DurationInSecs"`
+			DurationInMinutes int    `json:"DurationInMinutes"`
+			Asset             string `json:"asset"`
+		} `json:"next"`
+	} `json:"arenasRanked"`
+	Ltm struct {
+		Current struct {
+			Start             int    `json:"start"`
+			End               int    `json:"end"`
+			ReadableDateStart string `json:"readableDate_start"`
+			ReadableDateEnd   string `json:"readableDate_end"`
+			Map               string `json:"map"`
+			Code              string `json:"code"`
+			DurationInSecs    int    `json:"DurationInSecs"`
+			DurationInMinutes int    `json:"DurationInMinutes"`
+			IsActive          bool   `json:"isActive"`
+			EventName         string `json:"eventName"`
+			Asset             string `json:"asset"`
+			RemainingSecs     int    `json:"remainingSecs"`
+			RemainingMins     int    `json:"remainingMins"`
+			RemainingTimer    string `json:"remainingTimer"`
+		} `json:"current"`
+		Next struct {
+			Start             int    `json:"start"`
+			End               int    `json:"end"`
+			ReadableDateStart string `json:"readableDate_start"`
+			ReadableDateEnd   string `json:"readableDate_end"`
+			Map               string `json:"map"`
+			Code              string `json:"code"`
+			DurationInSecs    int    `json:"DurationInSecs"`
+			DurationInMinutes int    `json:"DurationInMinutes"`
+			IsActive          bool   `json:"isActive"`
+			EventName         string `json:"eventName"`
+			Asset             string `json:"asset"`
+		} `json:"next"`
+	} `json:"ltm"`
 }
 
 func MapRotation(c *gin.Context) {

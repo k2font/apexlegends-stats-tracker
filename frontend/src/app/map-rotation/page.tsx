@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import MapInfo from './MapInfo';
 
 const getMapRotation = async () => {
   const res = await fetch("http://localhost:8080/map-rotation")
@@ -16,14 +16,13 @@ const MapRotation = async ({
     <section>
       <nav>
         <h1>Map Rotation</h1>
-        
-        <p>Current Map: {map_rotation.current.map}</p>
-        <p>Remain: {map_rotation.current.remainingTimer}</p>
-        <Image
-          src={map_rotation.current.asset}
-          width={600}
-          height={300}
-          alt={map_rotation.current.map}
+        <MapInfo
+          rotationInfo={map_rotation.battle_royale}
+          title="Battile Royale"
+        />
+        <MapInfo
+          rotationInfo={map_rotation.ranked}
+          title="Ranked"
         />
       </nav>
       {children}

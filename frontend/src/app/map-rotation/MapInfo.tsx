@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import MapInfoPanel from './MapInfoPanel'
 
 type RotationInfo = {
   current: {
@@ -14,32 +15,15 @@ type RotationInfo = {
 
 const MapInfo = ({
   rotationInfo,
-  title
+  title,
 }: {
   rotationInfo: RotationInfo, 
   title: string
 }) => {
   return (
     <>
-      <h2>{title}</h2>
-      <h3>Current Map</h3>
-      <p>{rotationInfo.current.map}</p>
-      <p>Remain: {rotationInfo.current.remainingTimer}</p>
-      <Image
-        src={rotationInfo.current.asset}
-        width={600}
-        height={250}
-        alt={rotationInfo.current.map}
-      />
-
-      <h3>Next Map</h3>
-      <p>{rotationInfo.next.map}</p>
-      <Image
-        src={rotationInfo.next.asset}
-        width={600}
-        height={250}
-        alt={rotationInfo.next.map}
-      />
+      <MapInfoPanel rotationInfo={rotationInfo.current} title={title} isCurrentMap={true} />
+      <MapInfoPanel rotationInfo={rotationInfo.next} title={title} isCurrentMap={false} />
     </>
   );
 }

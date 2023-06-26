@@ -17,7 +17,7 @@ const MapInfoPanel = ({
 }) => {
   return (
     <>
-      <h2>{title}</h2>
+      { isCurrentMap && <h2>{title}</h2> }
       <h3>{isCurrentMap ? "Current Map" : "Next Map"}</h3>
       <p>{rotationInfo.map}</p>
       { isCurrentMap && <p>Remain: {rotationInfo.remainingTimer}</p> }

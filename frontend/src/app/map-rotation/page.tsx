@@ -17,12 +17,13 @@ const MapRotation = async ({
       <nav>
         <h1>Map Rotation</h1>
         
-        <p>Current Map: {map_rotation.current.map}</p>
+        <h2>Current Map</h2>
+        <p>{map_rotation.current.map}</p>
         <p>Remain: {map_rotation.current.remainingTimer}</p>
         <Image
           src={map_rotation.current.asset}
-          width={600}
-          height={300}
+          width={1200}
+          height={600}
           alt={map_rotation.current.map}
         />
       </nav>

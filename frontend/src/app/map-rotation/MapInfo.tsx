@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-
 type RotationInfo = {
   current: {
     map: string,

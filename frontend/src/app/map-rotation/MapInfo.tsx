@@ -18,7 +18,7 @@ const MapInfo = ({
   title,
 }: {
   rotationInfo: RotationInfo, 
-  title: string
+  title: string,
 }) => {
   return (
     <>

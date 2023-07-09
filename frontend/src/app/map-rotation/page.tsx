@@ -16,7 +16,7 @@ const MapRotation = async ({
   return (
     <section>
       <nav>
-        <div>
+        <div className="title">
           <h1>Map Rotation</h1>
         </div>
         <div className="container">

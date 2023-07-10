@@ -1,5 +1,7 @@
 "use client"
 
+import Header from '../../components/Header';
+import Sidebar from '../../components/Sidebar';
 import React, {useEffect, useState} from 'react'
 
 export type ServerStatusData = {
@@ -260,24 +262,30 @@ const ServerStatus = ({
     fetchData();
   }, []);
 
-  if (!status) return <p>Loading...</p>;
-
   return (
-    <section>
-      <nav>
-        <h1>Server Status</h1>
+    <>
+      <Header />
+      <Sidebar />
+      {!status ? (
+        <p>Loading...</p>
+      ) : (
+        <section>
+          <nav>
+            <h1>Server Status</h1>
 
-        <h2>Origin Login</h2>
-        <p>EUWest: {status.Origin_login["EU-West"].Status}</p>
-        <p>EUeast: {status.Origin_login["EU-East"].Status}</p>
-        <p>USWest: {status.Origin_login["US-West"].Status}</p>
-        <p>USCentral: {status.Origin_login["US-Central"].Status}</p>
-        <p>USEast: {status.Origin_login["US-East"].Status}</p>
-        <p>SouthAmerica: {status.Origin_login["SouthAmerica"].Status}</p>
-        <p>Asia: {status.Origin_login["Asia"].Status}</p>
-      </nav>
-      {children}
-    </section>
+            <h2>Origin Login</h2>
+            <p>EUWest: {status.Origin_login["EU-West"].Status}</p>
+            <p>EUeast: {status.Origin_login["EU-East"].Status}</p>
+            <p>USWest: {status.Origin_login["US-West"].Status}</p>
+            <p>USCentral: {status.Origin_login["US-Central"].Status}</p>
+            <p>USEast: {status.Origin_login["US-East"].Status}</p>
+            <p>SouthAmerica: {status.Origin_login["SouthAmerica"].Status}</p>
+            <p>Asia: {status.Origin_login["Asia"].Status}</p>
+          </nav>
+          {children}
+        </section>
+      )}
+    </>
   )
 }
 

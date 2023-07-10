@@ -1,5 +1,6 @@
 import MapInfo from './MapInfo';
-import Header from '../../components/Header';
+import Header from '../..//components/Header';
+import Sidebar from '../../components/Sidebar';
 import './styles.css';
 
 const getMapRotation = async () => {
@@ -15,8 +16,13 @@ const MapRotation = async ({
   const map_rotation = await getMapRotation()
 
   return (
-    <>
-      <Header />
+    <div className="map-rotation">
+      <div className="map-rotation-header">
+        <Header />
+      </div>
+      <div className="map-rotation-sidebar">
+        <Sidebar />
+      </div>
       <section>
         <nav>
           <div className="map-rotation-title">
@@ -39,7 +45,7 @@ const MapRotation = async ({
         </nav>
         {children}
       </section>
-    </>
+    </div>
   )
 }
 

@@ -1,5 +1,7 @@
 "use client";
 
+import Header from '../../components/Header';
+import Sidebar from '../../components/Sidebar';
 import { ChangeEvent, useState } from "react";
 
 export type UserData = {
@@ -614,20 +616,24 @@ const Search = ({
   }
 
   return (
-    <section>
-      <nav>
-        <h1>Search Rank</h1>
-        <div>
-          <input type="text" placeholder="k2font" onChange={handleInputChangePlayer} />
-          <input type="text" placeholder="PS4, PC, ..." onChange={handleInputChangePlatform} />
-          <button onClick={getRank}>search</button>
-        </div>
-        <div>
-          <p>Rank: {response?.global.rank.rankName}</p>
-        </div>
-      </nav>
-      {children}
-    </section>
+    <>
+      <Header />
+      <Sidebar />
+      <section>
+        <nav>
+          <h1>Search Rank</h1>
+          <div>
+            <input type="text" placeholder="k2font" onChange={handleInputChangePlayer} />
+            <input type="text" placeholder="PS4, PC, ..." onChange={handleInputChangePlatform} />
+            <button onClick={getRank}>search</button>
+          </div>
+          <div>
+            <p>Rank: {response?.global.rank.rankName}</p>
+          </div>
+        </nav>
+        {children}
+      </section>
+    </>
   )
 }
 

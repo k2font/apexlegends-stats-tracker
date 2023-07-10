@@ -1,6 +1,23 @@
+.map-rotation {
+  display: grid;
+  grid-template-areas: "header header" "sidebar content";
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.map-rotation-header {
+  grid-area: header;
+}
+
+.map-rotation-sidebar{
+  grid-area: sidebar;
+  z-index: 1;
+}
+
 section {
   position: absolute;
   top: 70px;
+  left: 220px;
+  grid-area: content;
 }
 
 nav {

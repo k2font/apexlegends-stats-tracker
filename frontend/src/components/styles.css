@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: #363636;
+  display: flex;
+}
+
+.hamburger {
+  border: 1px solid #A4373D;
+  width: 62px;
+  height: 62px;
+  background-color: #A4373D;
+}
+
+.title {
+  font-size: 20px;
+  color: white;
+  margin-left: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.side-box {
+  border: 1px solid #A4373D;
+  width: 10px;
+  height: 62px;
+  background-color: #A4373D;
+  margin-left: auto;
+}

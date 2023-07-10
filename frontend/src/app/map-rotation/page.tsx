@@ -1,4 +1,5 @@
 import MapInfo from './MapInfo';
+import Header from '../../components/Header';
 import './styles.css';
 
 const getMapRotation = async () => {
@@ -14,28 +15,31 @@ const MapRotation = async ({
   const map_rotation = await getMapRotation()
 
   return (
-    <section>
-      <nav>
-        <div className="title">
-          <h1>Map Rotation</h1>
-        </div>
-        <div className="container">
-          <div className="battle-royale">
-            <MapInfo
-              rotationInfo={map_rotation.battle_royale}
-              title="Battile Royale"
-            />
+    <>
+      <Header />
+      <section>
+        <nav>
+          <div className="map-rotation-title">
+            <h1>Map Rotation</h1>
           </div>
-          <div className="ranked">
-            <MapInfo
-              rotationInfo={map_rotation.ranked}
-              title="Ranked"
-            />
+          <div className="container">
+            <div className="battle-royale">
+              <MapInfo
+                rotationInfo={map_rotation.battle_royale}
+                title="Battile Royale"
+              />
+            </div>
+            <div className="ranked">
+              <MapInfo
+                rotationInfo={map_rotation.ranked}
+                title="Ranked"
+              />
+            </div>
           </div>
-        </div>
-      </nav>
-      {children}
-    </section>
+        </nav>
+        {children}
+      </section>
+    </>
   )
 }
 

@@ -5,11 +5,13 @@ type RotationInfo = {
   current: {
     map: string,
     remainingTimer: string,
-    asset: string
+    asset: string,
+    remainingSecs: number,
   },
   next: {
     map: string,
-    asset: string
+    asset: string,
+    remainingSecs: number,
   },
 }
 
